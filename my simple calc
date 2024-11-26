@@ -1,0 +1,100 @@
+import math
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    return x / y if y != 0 else "Error: Division by zero"
+
+def power(x, y):
+    return x ** y
+
+def square_root(x):
+    return math.sqrt(x) if x >= 0 else "Error: Invalid input"
+
+def sin(x):
+    return math.sin(math.radians(x))
+
+def cos(x):
+    return math.cos(math.radians(x))
+
+def tan(x):
+    return math.tan(math.radians(x))
+
+def log(x):
+    return math.log10(x) if x > 0 else "Error: Invalid input"
+
+def ln(x):
+    return math.log(x) if x > 0 else "Error: Invalid input"
+
+def factorial(x):
+    return math.factorial(int(x)) if x >= 0 and x.is_integer() else "Error: Invalid input"
+
+def calculator():
+    print("Welcome to fx-991 Calculator")
+    print("Available operations:")
+    print("1. Add (+)")
+    print("2. Subtract (-)")
+    print("3. Multiply (*)")
+    print("4. Divide (/)")
+    print("5. Power (^)")
+    print("6. Square Root (√)")
+    print("7. Sine (sin)")
+    print("8. Cosine (cos)")
+    print("9. Tangent (tan)")
+    print("10. Logarithm (log)")
+    print("11. Natural Logarithm (ln)")
+    print("12. Factorial (!)")
+    print("13. Quit")
+
+    while True:
+        choice = input("Enter operation number (1-13): ")
+
+        if choice == '13':
+            print("Thank you for using fx-991 Calculator!")
+            break
+
+        if choice in ('1', '2', '3', '4', '5'):
+            x = float(input("Enter first number: "))
+            y = float(input("Enter second number: "))
+
+            if choice == '1':
+                print("Result:", add(x, y))
+            elif choice == '2':
+                print("Result:", subtract(x, y))
+            elif choice == '3':
+                print("Result:", multiply(x, y))
+            elif choice == '4':
+                print("Result:", divide(x, y))
+            elif choice == '5':
+                print("Result:", power(x, y))
+
+        elif choice in ('6', '7', '8', '9', '10', '11', '12'):
+            x = float(input("Enter number: "))
+
+            if choice == '6':
+                print("Result:", square_root(x))
+            elif choice == '7':
+                print("Result:", sin(x))
+            elif choice == '8':
+                print("Result:", cos(x))
+            elif choice == '9':
+                print("Result:", tan(x))
+            elif choice == '10':
+                print("Result:", log(x))
+            elif choice == '11':
+                print("Result:", ln(x))
+            elif choice == '12':
+                print("Result:", factorial(x))
+
+        else:
+            print("Invalid input. Please try again.")
+
+if __name__ == "__main__":
+    calculator()
